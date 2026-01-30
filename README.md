@@ -11,54 +11,78 @@ A modern admin dashboard UI kit built with shadcn/ui. Includes layouts, data dis
 - **Charts** - Line, bar, and pie charts powered by Recharts
 - **Customizable** - Easy to extend and customize
 
-## Quick Start - Install Everything
+## Quick Start
 
-Run this single command to install all components, the theme, and their dependencies at once:
-
-```bash
-npx shadcn@latest add https://smart-ui.sathwik.life/r/shui-theme.json https://smart-ui.sathwik.life/r/shui-dashboard-layout.json https://smart-ui.sathwik.life/r/shui-sidebar.json https://smart-ui.sathwik.life/r/shui-header.json https://smart-ui.sathwik.life/r/shui-stats-card.json https://smart-ui.sathwik.life/r/shui-line-chart.json https://smart-ui.sathwik.life/r/shui-pie-chart.json https://smart-ui.sathwik.life/r/shui-bar-chart.json https://smart-ui.sathwik.life/r/shui-data-list.json https://smart-ui.sathwik.life/r/shui-user-list.json https://smart-ui.sathwik.life/r/shui-filter-bar.json https://smart-ui.sathwik.life/r/shui-data-table.json https://smart-ui.sathwik.life/r/shui-metric-card.json -y
-```
-
-This will automatically install all shadcn base dependencies (button, card, badge, avatar, etc.) and npm packages (recharts, lucide-react).
-
-## Installation
-
-### Prerequisites
-
-Make sure your project has shadcn/ui initialized:
+### 1. Initialize shadcn/ui (if not already done)
 
 ```bash
 npx shadcn@latest init
 ```
 
-### Install Individual Components
+### 2. Register the namespace
 
-You can also install components individually:
+Add the `@smart-ui` registry to your project's `components.json`:
+
+```json
+{
+  "registries": {
+    "@smart-ui": "https://smart-ui.sathwik.life/r/{name}.json"
+  }
+}
+```
+
+### 3. Install all components
+
+```bash
+npx shadcn@latest add @smart-ui/shui-theme @smart-ui/shui-dashboard-layout @smart-ui/shui-sidebar @smart-ui/shui-header @smart-ui/shui-stats-card @smart-ui/shui-line-chart @smart-ui/shui-pie-chart @smart-ui/shui-bar-chart @smart-ui/shui-data-list @smart-ui/shui-user-list @smart-ui/shui-filter-bar @smart-ui/shui-data-table @smart-ui/shui-metric-card -y
+```
+
+This automatically installs all shadcn base dependencies (button, card, badge, avatar, etc.) and npm packages (recharts, lucide-react).
+
+### Browse available components
+
+```bash
+npx shadcn@latest list @smart-ui
+```
+
+## Installation
+
+### Using namespace (recommended)
+
+After registering the namespace above, install components individually:
 
 ```bash
 # Theme
-npx shadcn@latest add https://smart-ui.sathwik.life/r/shui-theme.json
+npx shadcn@latest add @smart-ui/shui-theme
 
 # Layout
-npx shadcn@latest add https://smart-ui.sathwik.life/r/shui-dashboard-layout.json
-npx shadcn@latest add https://smart-ui.sathwik.life/r/shui-sidebar.json
-npx shadcn@latest add https://smart-ui.sathwik.life/r/shui-header.json
+npx shadcn@latest add @smart-ui/shui-dashboard-layout
+npx shadcn@latest add @smart-ui/shui-sidebar
+npx shadcn@latest add @smart-ui/shui-header
 
 # Data Display
-npx shadcn@latest add https://smart-ui.sathwik.life/r/shui-stats-card.json
-npx shadcn@latest add https://smart-ui.sathwik.life/r/shui-data-list.json
-npx shadcn@latest add https://smart-ui.sathwik.life/r/shui-user-list.json
-npx shadcn@latest add https://smart-ui.sathwik.life/r/shui-data-table.json
-npx shadcn@latest add https://smart-ui.sathwik.life/r/shui-metric-card.json
-npx shadcn@latest add https://smart-ui.sathwik.life/r/shui-filter-bar.json
+npx shadcn@latest add @smart-ui/shui-stats-card
+npx shadcn@latest add @smart-ui/shui-data-list
+npx shadcn@latest add @smart-ui/shui-user-list
+npx shadcn@latest add @smart-ui/shui-data-table
+npx shadcn@latest add @smart-ui/shui-metric-card
+npx shadcn@latest add @smart-ui/shui-filter-bar
 
 # Charts
-npx shadcn@latest add https://smart-ui.sathwik.life/r/shui-line-chart.json
-npx shadcn@latest add https://smart-ui.sathwik.life/r/shui-pie-chart.json
-npx shadcn@latest add https://smart-ui.sathwik.life/r/shui-bar-chart.json
+npx shadcn@latest add @smart-ui/shui-line-chart
+npx shadcn@latest add @smart-ui/shui-pie-chart
+npx shadcn@latest add @smart-ui/shui-bar-chart
 ```
 
-### Manual Installation
+### Using direct URLs (no namespace setup needed)
+
+You can also install directly via URL without configuring a namespace:
+
+```bash
+npx shadcn@latest add https://smart-ui.sathwik.life/r/shui-theme.json https://smart-ui.sathwik.life/r/shui-dashboard-layout.json https://smart-ui.sathwik.life/r/shui-sidebar.json https://smart-ui.sathwik.life/r/shui-header.json https://smart-ui.sathwik.life/r/shui-stats-card.json https://smart-ui.sathwik.life/r/shui-line-chart.json https://smart-ui.sathwik.life/r/shui-pie-chart.json https://smart-ui.sathwik.life/r/shui-bar-chart.json https://smart-ui.sathwik.life/r/shui-data-list.json https://smart-ui.sathwik.life/r/shui-user-list.json https://smart-ui.sathwik.life/r/shui-filter-bar.json https://smart-ui.sathwik.life/r/shui-data-table.json https://smart-ui.sathwik.life/r/shui-metric-card.json -y
+```
+
+### Manual installation
 
 1. Copy the files from `registry/smart-hiring-ui/` to your project's components folder
 2. Install dependencies:
