@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "shui-data-list",
+  "title": "Data List",
+  "description": "List items with badges, metadata, and actions",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "card",
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "registry/smart-hiring-ui/data-list.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { cn } from \"@/lib/utils\"\nimport { Card, CardContent, CardDescription, CardHeader, CardTitle } from \"@/components/ui/card\"\nimport { Badge, BadgeProps } from \"@/components/ui/badge\"\n\n// ============================================================================\n// TYPES\n// ============================================================================\n\nexport interface DataListItem {\n  /** Unique identifier */\n  id: string | number\n  /** Primary text */\n  title: string\n  /** Secondary text */\n  subtitle?: string\n  /** Status badge */\n  badge?: {\n    label: string\n    variant?: BadgeProps[\"variant\"]\n    className?: string\n  }\n  /** Right-side content */\n  meta?: React.ReactNode\n  /** Click handler */\n  onClick?: () => void\n}\n\nexport interface DataListProps {\n  /** List title */\n  title: string\n  /** List description */\n  description?: string\n  /** List items */\n  items: DataListItem[]\n  /** Custom item renderer */\n  renderItem?: (item: DataListItem) => React.ReactNode\n  /** Additional CSS classes */\n  className?: string\n}\n\n// ============================================================================\n// COMPONENTS\n// ============================================================================\n\n/**\n * DataList - List items with badges, metadata, and actions\n * \n * @example\n * ```tsx\n * <DataList\n *   title=\"Recent Orders\"\n *   description=\"Latest orders and their status\"\n *   items={[\n *     {\n *       id: 1,\n *       title: \"Order #1234\",\n *       subtitle: \"Customer: John Doe\",\n *       badge: { label: \"Completed\", variant: \"default\" },\n *       meta: \"$120.00\",\n *     },\n *   ]}\n * />\n * ```\n */\nexport function DataList({\n  title,\n  description,\n  items,\n  renderItem,\n  className,\n}: DataListProps) {\n  return (\n    <Card className={cn(\"border-border shadow-sm\", className)}>\n      <CardHeader>\n        <CardTitle>{title}</CardTitle>\n        {description && <CardDescription>{description}</CardDescription>}\n      </CardHeader>\n      <CardContent>\n        <div className=\"space-y-3\">\n          {items.map((item) => (\n            <React.Fragment key={item.id}>\n              {renderItem ? (\n                renderItem(item)\n              ) : (\n                <DefaultListItem item={item} />\n              )}\n            </React.Fragment>\n          ))}\n        </div>\n      </CardContent>\n    </Card>\n  )\n}\n\nfunction DefaultListItem({ item }: { item: DataListItem }) {\n  return (\n    <div\n      className={cn(\n        \"flex flex-col sm:flex-row sm:items-center justify-between p-3 rounded-lg border border-border gap-3\",\n        item.onClick && \"cursor-pointer hover:bg-accent/50 transition-colors\"\n      )}\n      onClick={item.onClick}\n    >\n      <div className=\"space-y-1 min-w-0\">\n        <p className=\"font-medium truncate\">{item.title}</p>\n        {item.subtitle && (\n          <p className=\"text-sm text-muted-foreground truncate\">{item.subtitle}</p>\n        )}\n      </div>\n      <div className=\"flex items-center gap-2 flex-shrink-0\">\n        {item.badge && (\n          <Badge variant={item.badge.variant} className={item.badge.className}>\n            {item.badge.label}\n          </Badge>\n        )}\n        {item.meta && <span className=\"text-sm font-medium\">{item.meta}</span>}\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}
