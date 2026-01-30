@@ -76,7 +76,8 @@ export function DataTableRow({
       className={cn(
         "flex flex-col lg:flex-row lg:items-center justify-between p-4 rounded-lg border border-border gap-4",
         (onClick || actions) && "hover:bg-accent/50 transition-colors",
-        onClick && "cursor-pointer"
+        onClick && "cursor-pointer",
+        className
       )}
       onClick={onClick}
     >

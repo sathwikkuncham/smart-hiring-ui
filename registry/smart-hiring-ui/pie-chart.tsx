@@ -110,10 +110,10 @@ export function PieChart({
                   border: "1px solid hsl(var(--border))",
                   borderRadius: "6px",
                 }}
-                formatter={(value: number | undefined, name: string) => {
+                formatter={(value: number | undefined, name: string | undefined) => {
                   const numValue = value ?? 0
                   const percentage = ((numValue / total) * 100).toFixed(1)
-                  return [`${numValue} (${percentage}%)`, name]
+                  return [`${numValue} (${percentage}%)`, name ?? ""]
                 }}
               />
               {showLegend && <Legend />}
