@@ -3,7 +3,7 @@
 import * as React from "react"
 import { cn } from "@/lib/utils"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge, BadgeProps } from "@/components/ui/badge"
+import { Badge } from "@/components/ui/badge"
 
 // ============================================================================
 // TYPES
@@ -19,7 +19,7 @@ export interface DataListItem {
   /** Status badge */
   badge?: {
     label: string
-    variant?: BadgeProps["variant"]
+    variant?: "default" | "secondary" | "destructive" | "outline"
     className?: string
   }
   /** Right-side content */

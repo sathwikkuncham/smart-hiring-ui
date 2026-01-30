@@ -1,7 +1,8 @@
 "use client"
 
 import * as React from "react"
-import { LucideIcon, TrendingUp, TrendingDown } from "lucide-react"
+import { TrendingUp, TrendingDown } from "lucide-react"
+import type { LucideIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 

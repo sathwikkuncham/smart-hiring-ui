@@ -1,9 +1,9 @@
 "use client"
 
 import * as React from "react"
-import { LucideIcon } from "lucide-react"
+import type { LucideIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { Badge, BadgeProps } from "@/components/ui/badge"
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
 // ============================================================================
@@ -31,7 +31,7 @@ export interface DataTableRowProps {
   /** Status badge */
   badge?: {
     label: string
-    variant?: BadgeProps["variant"]
+    variant?: "default" | "secondary" | "destructive" | "outline"
   }
   /** Row actions */
   actions?: DataTableRowAction[]

@@ -1,6 +1,5 @@
 "use client"
 
-import * as React from "react"
 import { PieChart as RechartsPieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from "recharts"
 import { cn } from "@/lib/utils"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -111,9 +110,10 @@ export function PieChart({
                   border: "1px solid hsl(var(--border))",
                   borderRadius: "6px",
                 }}
-                formatter={(value: number, name: string) => {
-                  const percentage = ((value / total) * 100).toFixed(1)
-                  return [`${value} (${percentage}%)`, name]
+                formatter={(value: number | undefined, name: string) => {
+                  const numValue = value ?? 0
+                  const percentage = ((numValue / total) * 100).toFixed(1)
+                  return [`${numValue} (${percentage}%)`, name]
                 }}
               />
               {showLegend && <Legend />}
