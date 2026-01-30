@@ -1,0 +1,235 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "smart-hiring-ui",
+  "homepage": "https://smart-ui.sathwik.life",
+  "description": "A modern admin dashboard UI kit built with shadcn/ui - includes layouts, data displays, charts, and navigation components",
+  "items": [
+    {
+      "name": "shui-theme",
+      "type": "registry:theme",
+      "title": "Smart Hiring UI Theme",
+      "description": "Professional blue-teal color palette for admin dashboards",
+      "cssVars": {
+        "light": {
+          "background": "210 20% 98%",
+          "foreground": "220 17% 20%",
+          "card": "0 0% 100%",
+          "card-foreground": "220 17% 20%",
+          "popover": "0 0% 100%",
+          "popover-foreground": "220 17% 20%",
+          "primary": "214 60% 46%",
+          "primary-foreground": "0 0% 100%",
+          "secondary": "168 76% 32%",
+          "secondary-foreground": "0 0% 100%",
+          "muted": "210 20% 96%",
+          "muted-foreground": "215 16% 47%",
+          "accent": "168 76% 36%",
+          "accent-foreground": "0 0% 100%",
+          "destructive": "0 72% 51%",
+          "destructive-foreground": "0 0% 100%",
+          "border": "214 32% 91%",
+          "input": "214 32% 91%",
+          "ring": "214 60% 46%",
+          "chart-1": "214 60% 46%",
+          "chart-2": "168 76% 32%",
+          "chart-3": "263 70% 50%",
+          "chart-4": "330 81% 60%",
+          "chart-5": "32 95% 44%"
+        },
+        "dark": {
+          "background": "220 17% 12%",
+          "foreground": "210 20% 98%",
+          "card": "220 17% 16%",
+          "card-foreground": "210 20% 98%",
+          "popover": "220 17% 16%",
+          "popover-foreground": "210 20% 98%",
+          "primary": "214 60% 52%",
+          "primary-foreground": "0 0% 100%",
+          "secondary": "168 76% 38%",
+          "secondary-foreground": "0 0% 100%",
+          "muted": "220 17% 20%",
+          "muted-foreground": "215 16% 60%",
+          "accent": "168 76% 38%",
+          "accent-foreground": "0 0% 100%",
+          "destructive": "0 72% 51%",
+          "destructive-foreground": "0 0% 100%",
+          "border": "220 17% 24%",
+          "input": "220 17% 24%",
+          "ring": "214 60% 52%",
+          "chart-1": "214 60% 52%",
+          "chart-2": "168 76% 38%",
+          "chart-3": "263 70% 56%",
+          "chart-4": "330 81% 66%",
+          "chart-5": "32 95% 50%"
+        }
+      }
+    },
+    {
+      "name": "shui-sidebar",
+      "type": "registry:component",
+      "title": "Dashboard Sidebar",
+      "description": "Collapsible sidebar with navigation groups, performance cards, and user profile",
+      "registryDependencies": ["button", "badge", "separator", "tooltip", "collapsible"],
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "registry/smart-hiring-ui/sidebar.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "shui-header",
+      "type": "registry:component",
+      "title": "Dashboard Header",
+      "description": "Sticky header with logo, breadcrumbs, notifications, and user menu",
+      "registryDependencies": ["button", "avatar", "badge", "separator", "dropdown-menu"],
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "registry/smart-hiring-ui/header.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "shui-stats-card",
+      "type": "registry:component",
+      "title": "Stats Card",
+      "description": "Metric card with title, value, change indicator, and icon",
+      "registryDependencies": ["card"],
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "registry/smart-hiring-ui/stats-card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "shui-line-chart",
+      "type": "registry:component",
+      "title": "Line Chart",
+      "description": "Responsive line chart with multiple data series",
+      "registryDependencies": ["card"],
+      "dependencies": ["recharts", "lucide-react"],
+      "files": [
+        {
+          "path": "registry/smart-hiring-ui/line-chart.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "shui-pie-chart",
+      "type": "registry:component",
+      "title": "Pie Chart",
+      "description": "Donut/pie chart with legend and tooltips",
+      "registryDependencies": ["card"],
+      "dependencies": ["recharts", "lucide-react"],
+      "files": [
+        {
+          "path": "registry/smart-hiring-ui/pie-chart.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "shui-bar-chart",
+      "type": "registry:component",
+      "title": "Bar Chart",
+      "description": "Vertical bar chart for comparisons",
+      "registryDependencies": ["card"],
+      "dependencies": ["recharts", "lucide-react"],
+      "files": [
+        {
+          "path": "registry/smart-hiring-ui/bar-chart.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "shui-data-list",
+      "type": "registry:component",
+      "title": "Data List",
+      "description": "List items with badges, metadata, and actions",
+      "registryDependencies": ["card", "badge"],
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "registry/smart-hiring-ui/data-list.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "shui-user-list",
+      "type": "registry:component",
+      "title": "User List",
+      "description": "User cards with avatar, info, badges, and match scores",
+      "registryDependencies": ["card", "badge", "avatar", "progress"],
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "registry/smart-hiring-ui/user-list.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "shui-filter-bar",
+      "type": "registry:component",
+      "title": "Filter Bar",
+      "description": "Search, filters, and action buttons for data tables",
+      "registryDependencies": ["input", "select", "button"],
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "registry/smart-hiring-ui/filter-bar.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "shui-data-table",
+      "type": "registry:component",
+      "title": "Data Table Row",
+      "description": "Table row component with actions and status badges",
+      "registryDependencies": ["badge", "button"],
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "registry/smart-hiring-ui/data-table-row.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "shui-metric-card",
+      "type": "registry:component",
+      "title": "Metric Card",
+      "description": "Simple metric display with progress or value",
+      "registryDependencies": ["card", "progress"],
+      "files": [
+        {
+          "path": "registry/smart-hiring-ui/metric-card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "shui-dashboard-layout",
+      "type": "registry:block",
+      "title": "Dashboard Layout",
+      "description": "Full dashboard layout with sidebar, header, and content area",
+      "registryDependencies": ["button", "avatar", "badge", "separator", "sheet"],
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "registry/smart-hiring-ui/dashboard-layout.tsx",
+          "type": "registry:component"
+        }
+      ]
+    }
+  ]
+}

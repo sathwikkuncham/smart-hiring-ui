@@ -1,0 +1,40 @@
+{
+  "name": "smart-hiring-ui",
+  "version": "1.0.0",
+  "description": "A modern admin dashboard UI kit built with shadcn/ui",
+  "author": "Your Name",
+  "license": "MIT",
+  "keywords": [
+    "shadcn",
+    "ui",
+    "dashboard",
+    "admin",
+    "components",
+    "react",
+    "nextjs",
+    "tailwindcss"
+  ],
+  "scripts": {
+    "registry:build": "shadcn build"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "dependencies": {
+    "recharts": "^2.10.0",
+    "lucide-react": "^0.300.0"
+  },
+  "devDependencies": {
+    "shadcn": "latest",
+    "typescript": "^5.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sathwikkuncham/smart-hiring-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sathwikkuncham/smart-hiring-ui/issues"
+  },
+  "homepage": "https://smart-ui.sathwik.life"
+}
